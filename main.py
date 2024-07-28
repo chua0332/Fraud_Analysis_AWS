@@ -4,7 +4,7 @@ import os
 
 def main():
     environment = os.getenv("ENVIRONMENT", "local")
-    mode = os.getenv("MODE", "train")
+    mode = os.getenv("MODE", "inference")
 
     train_path = "/opt/ml/code/train.py"
     inference_path = "/opt/ml/code/inference.py"

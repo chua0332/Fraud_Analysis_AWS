@@ -25,7 +25,7 @@ def main(args):
 
     if environment == "local":
         train_data_path = "data/train/fraud_train.csv"
-        output_dir = "output"
+        output_dir = "model"
 
     data = pd.read_csv(train_data_path)
 
@@ -83,6 +83,11 @@ def main(args):
     model_path = os.path.join(output_dir, "model.joblib")
     joblib.dump(model, model_path)
     print(f"Model saved to {model_path}")
+
+    #Save the preprocessor
+    preprocessor_path = os.path.join(output_dir, "preprocessor.joblib")
+    joblib.dump(preprocessor, preprocessor_path)
+    print(f"Preprocessor saved to {preprocessor_path}")
 
 # Function to calculate age
 #born has to be a datetime object
