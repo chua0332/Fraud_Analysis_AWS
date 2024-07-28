@@ -20,6 +20,9 @@ Both credit card number and the user names are Pii information and we must *ensu
 ## ML Solution Type determination
 Given that we are going to predict fradulent transactions, this will obviously be a typical classification ML problem.  The  I would be quite inclined to go straight to tree based ensemble methods such as random forests and extreme gradient boosting. Preliminary analysis have already shown that baseline XGBoost already has a higher recall score as compared to random forest and this coupled with its easier scalability makes me lean towards it. With appropriate fine tuning of hyperpameters, I believe that the model's performance will further improve.
 
+## Important command to build docker locally with mounting
+'docker build -t fraud_mlops .'
+
 ## How are we serving
 Given that we are needing the ML model to prevent potential fradulent transactions, we would be needing it to predict in real time. At the very least, we would require a functional API of production quality, and we are thinking of deployment the model as an endpoint first before hooking it up to an API gateway which can be consumed by our online transaction systems.
 
