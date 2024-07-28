@@ -23,6 +23,9 @@ Given that we are going to predict fradulent transactions, this will obviously b
 ## Important command to build docker locally with mounting
 `docker build -t fraud_mlops .`
 
+To run with mounting
+`docker run -v $(pwd)/data:/opt/ml/input/data -v $(pwd)/output:/opt/ml/output -v $(pwd)/model:/opt/ml/model fraud_mlops`
+
 ## How are we serving
 Given that we are needing the ML model to prevent potential fradulent transactions, we would be needing it to predict in real time. At the very least, we would require a functional API of production quality, and we are thinking of deployment the model as an endpoint first before hooking it up to an API gateway which can be consumed by our online transaction systems.
 
